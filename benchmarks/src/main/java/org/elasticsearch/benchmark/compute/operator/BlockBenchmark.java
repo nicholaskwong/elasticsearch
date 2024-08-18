@@ -8,6 +8,7 @@
 
 package org.elasticsearch.benchmark.compute.operator;
 
+import java.security.SecureRandom;
 import org.apache.lucene.util.BytesRef;
 import org.elasticsearch.common.breaker.NoopCircuitBreaker;
 import org.elasticsearch.common.util.BigArrays;
@@ -114,7 +115,7 @@ public class BlockBenchmark {
     private static final int MAX_MV_ELEMENTS = 100;
     private static final int MAX_BYTES_REF_LENGTH = 255;
 
-    private static final Random random = new Random();
+    private static final Random random = new SecureRandom();
 
     private static final BlockFactory blockFactory = BlockFactory.getInstance(
         new NoopCircuitBreaker("noop"),
